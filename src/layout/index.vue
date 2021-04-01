@@ -7,12 +7,14 @@
         </div>
         <div class="nav-title">
           <!-- <img src="@/assets/header-title.png" /> -->
+          vue-study
         </div>
-        <div class="nav-welcome">
+        <div class="nav-welcome" v-if="!isLogin()">
           欢迎使用
         </div>
       </div>
       <el-menu
+        v-if="isLogin()"
         :default-active="$route.path"
         class="nav-links"
         mode="horizontal"
